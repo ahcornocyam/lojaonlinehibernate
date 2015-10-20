@@ -29,5 +29,15 @@ public class TestaHibernate {
 		entityManager.getTransaction().commit();
 		entityManager.close();
 
+
+		Pessoa pessoa2 = new	Pessoa();
+
+		pessoa2.setNome("fulano");
+		pessoa2.setDocumento("123.456.678");
+		pessoa2.setDataDeNascimento(formatar.parse("12/03/1988"));
+		entityManager.getTransaction().begin();
+		entityManager.persist(pessoa2);
+		entityManager.getTransaction().commit();
+		entityManager.close();
 	}
 }
