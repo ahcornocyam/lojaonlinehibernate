@@ -17,7 +17,6 @@ public class RemoverPessoa {
 		entityManager.remove(pessoa);
 		entityManager.getTransaction().commit();
 		entityManager.close();
-
 	}
 
 }
