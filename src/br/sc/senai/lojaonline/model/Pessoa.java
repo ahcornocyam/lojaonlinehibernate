@@ -13,25 +13,25 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="pessoas")
+@Table( name = "pessoas" )
 public class Pessoa {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	@Column( name = "id" )
 	private Long id;
 
-	@Column(name="nome")
+	@Column( name = "nome" )
 	private String nome;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name="data_de_nascimento")
+	@Temporal( TemporalType.DATE )
+	@Column( name = "data_de_nascimento" )
 	private Date dataDeNascimento;
 
-	@Column(name="documento")
+	@Column( name = "documento" )
 	private	String documento;
 
-	@OneToOne(mappedBy="pessoa")
+	@OneToOne( mappedBy = "pessoa" )
 	private Cliente cliente;
 
 
@@ -39,7 +39,7 @@ public class Pessoa {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente( Cliente cliente ) {
 		this.cliente = cliente;
 	}
 
@@ -47,7 +47,7 @@ public class Pessoa {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId( Long id ) {
 		this.id = id;
 	}
 
@@ -55,7 +55,7 @@ public class Pessoa {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNome( String nome ) {
 		this.nome = nome;
 	}
 
@@ -63,7 +63,7 @@ public class Pessoa {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(Date dataDeNascimento) {
+	public void setDataDeNascimento( Date dataDeNascimento ) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
@@ -71,10 +71,8 @@ public class Pessoa {
 		return documento;
 	}
 
-	public void setDocumento(String documento) {
+	public void setDocumento( String documento ) {
 		this.documento = documento;
 	}
-
-
 }
 

@@ -17,33 +17,33 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "compras")
+@Table( name = "compras" )
 public class Compra {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	@Column
 	private Long id;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "data_compra")
+	@Temporal( TemporalType.DATE )
+	@Column( name = "data_compra" )
 	private Date dataCompra;
 
 	@ManyToOne
-	@JoinColumn(name = "cliente_id")
+	@JoinColumn( name = "cliente_id" )
 	private Cliente cliente;
 
 	@ManyToMany
-	@JoinTable(name = "compras_tem_produtos",
-						joinColumns = { @JoinColumn(name = "compra_id") },
-						inverseJoinColumns = {@JoinColumn(name = "produto_id") })
+	@JoinTable( name = "compras_tem_produtos",
+						joinColumns = { @JoinColumn( name = "compra_id" ) },
+						inverseJoinColumns = {@JoinColumn( name = "produto_id" ) } )
 	private List<Produto> produtos;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId( Long id ) {
 		this.id = id;
 	}
 
@@ -51,7 +51,7 @@ public class Compra {
 		return dataCompra;
 	}
 
-	public void setDataCompra(Date dataCompra) {
+	public void setDataCompra( Date dataCompra ) {
 		this.dataCompra = dataCompra;
 	}
 
@@ -59,7 +59,7 @@ public class Compra {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente( Cliente cliente ) {
 		this.cliente = cliente;
 	}
 
@@ -67,10 +67,7 @@ public class Compra {
 		return produtos;
 	}
 
-	public void setProdutos(List<Produto> produtos) {
+	public void setProdutos( List<Produto> produtos ) {
 		this.produtos = produtos;
 	}
-
-
-
 }

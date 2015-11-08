@@ -12,11 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "produtos")
+@Table( name = "produtos" )
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 
 	private String nome;
@@ -24,17 +24,17 @@ public class Produto {
 	private Double preco;
 
 	@ManyToOne
-	@JoinColumn(name = "categoria_id")
+	@JoinColumn( name = "categoria_id" )
 	private Categoria categorias;
 
-	@ManyToMany(mappedBy="produtos")
+	@ManyToMany( mappedBy = "produtos" )
 	private List<Compra> compras;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId( Long id ) {
 		this.id = id;
 	}
 
@@ -42,7 +42,7 @@ public class Produto {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNome( String nome ) {
 		this.nome = nome;
 	}
 
@@ -50,7 +50,7 @@ public class Produto {
 		return preco;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco( Double preco ) {
 		this.preco = preco;
 	}
 
@@ -58,7 +58,7 @@ public class Produto {
 		return categorias;
 	}
 
-	public void setCategorias(Categoria categorias) {
+	public void setCategorias( Categoria categorias ) {
 		this.categorias = categorias;
 	}
 }

@@ -10,22 +10,22 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuarios")
+@Table( name = "usuarios" )
 public class Usuario {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	@Column( name = "id" )
 	private Long id;
 
-	@Column(name="login")
+	@Column( name = "login" )
 	private String login;
 
-	@Column(name= "senha")
+	@Column( name = "senha" )
 	private String senha;
 
 	@OneToOne
-	@JoinColumn(name = "pessoa_id")
+	@JoinColumn( name = "pessoa_id" )
 	private Pessoa pessoa;
 
 
@@ -33,7 +33,7 @@ public class Usuario {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId( Long id ) {
 		this.id = id;
 	}
 
@@ -41,7 +41,7 @@ public class Usuario {
 		return login;
 	}
 
-	public void setLogin(String login) {
+	public void setLogin( String login ) {
 		this.login = login;
 	}
 
@@ -49,7 +49,7 @@ public class Usuario {
 		return senha;
 	}
 
-	public void setSenha(String senha) {
+	public void setSenha( String senha ) {
 		this.senha = senha;
 	}
 
@@ -57,10 +57,7 @@ public class Usuario {
 		return pessoa;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
+	public void setPessoa( Pessoa pessoa ) {
 		this.pessoa = pessoa;
 	}
-
-
-
 }

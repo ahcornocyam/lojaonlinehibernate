@@ -18,26 +18,26 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "clientes")
+@Table( name = "clientes" )
 public class Cliente {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 
 	@OneToOne
-	@JoinColumn(name = "pessoa_id")
+	@JoinColumn( name = "pessoa_id" )
 	private Pessoa pessoa;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "data_cadastro")
+	@Temporal( TemporalType.DATE )
+	@Column( name = "data_cadastro" )
 	private Date dataCadastro;
 
 	@ManyToMany
-	@JoinTable(name = "clientes_gostam_de_categorias_de_produtos", joinColumns = {
-			@JoinColumn(name = "cliente_id") }, inverseJoinColumns = { @JoinColumn(name = "categoria_id") })
+	@JoinTable( name = "clientes_gostam_de_categorias_de_produtos" , joinColumns = {
+			@JoinColumn( name = "cliente_id" ) }, inverseJoinColumns = { @JoinColumn( name = "categoria_id" ) } )
 	private List<Categoria> categorias;
-	@OneToMany(mappedBy="cliente")
+	@OneToMany( mappedBy = "cliente" )
 	private List<Compra> compras;
 
 	public Long getId() {
@@ -52,7 +52,7 @@ public class Cliente {
 		return pessoa;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
+	public void setPessoa( Pessoa pessoa ) {
 		this.pessoa = pessoa;
 	}
 
@@ -60,7 +60,7 @@ public class Cliente {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro( Date dataCadastro ) {
 		this.dataCadastro = dataCadastro;
 	}
 
@@ -68,7 +68,7 @@ public class Cliente {
 		return categorias;
 	}
 
-	public void setCategorias(List<Categoria> categorias) {
+	public void setCategorias( List<Categoria> categorias ) {
 		this.categorias = categorias;
 	}
 
@@ -76,7 +76,7 @@ public class Cliente {
 		return compras;
 	}
 
-	public void setCompras(List<Compra> compras) {
+	public void setCompras( List<Compra> compras ) {
 		this.compras = compras;
 	}
 

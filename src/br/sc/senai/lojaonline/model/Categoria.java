@@ -11,24 +11,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="categorias")
+@Table( name = "categorias" )
 public class Categoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 
 	private String nome;
-	@OneToMany(mappedBy="categorias")
+	@OneToMany( mappedBy = "categorias" )
 	private List<Produto> produtos;
-	@ManyToMany(mappedBy="categorias")
+	@ManyToMany(mappedBy= "categorias" )
 	private List<Cliente> clientes;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId( Long id ) {
 		this.id = id;
 	}
 
@@ -36,7 +36,7 @@ public class Categoria {
 		return nome;
 	}
 
-	public void setNome(String name) {
+	public void setNome( String name ) {
 		this.nome = name;
 	}
 }
